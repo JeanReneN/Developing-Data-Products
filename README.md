@@ -10,4 +10,5 @@ Click the link below to run the application:
 http://jeanrene.shinyapps.io/CARMPG
 
 II. Slidify Presentation
-The Slidify Presentation deals with the Shiny application mentioned above.
+The Slidify Presentation deals with the Shiny application mentioned above (see first_deck).
+
