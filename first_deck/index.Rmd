@@ -1,0 +1,94 @@
+---
+title       : Car Fuel Consumption Prediction
+subtitle    : Peer Assessment
+author      : Jean Rene Ndeki, Data Scientist
+job         : Coursera
+framework   : io2012        # {io2012, html5slides, shower, dzslides,revealjs, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction
+
+- The Car Fuel Consumption Prediction is a regression model
+- The data product forecasts Miles Per Gallon (MPG)
+- The study and development follow the approach below
+
+## Outline
+
+- Question
+- Data
+- Features
+- Algorithm
+- Evaluation
+- Prediction
+
+--- .class #id 
+
+## Question
+
+- How many Miles Per Gallon (MPG) can a car travel?
+- A simple linear regression model answers the question 
+- The data product uses the weight variable to predict MPG 
+
+## Data
+
+- The data source is the 1974 motor trend US magazine
+- The data sample includes 32 automobiles 
+- The cars are 1973-74 models
+
+## Features
+
+- The features comprise 10 characteristics 
+- They are automobile design and performance
+- They also include automatic and manual transmission
+
+---.class #id 
+
+## Algorithm and Evaluation
+
+### Algorithm - Simple Linear Regression 
+```{r, echo=TRUE, results='hide'}
+fit<-lm(mpg ~ wt, data = mtcars)
+```
+
+### Equation 
+```{r, echo=FALSE, results='markup'}
+data(mtcars)
+paste("Miles Per Gallon Prediction = ", 
+      round((coef(fit)[1]),digits=2), 
+      " - ",
+      abs(round((coef(fit)[2]),digits=2)),
+      " * weight", sep="")
+```
+
+### Testing - t Student
+```{r,echo=TRUE, results='hide'}
+t.test(mpg ~ am, data = mtcars)
+```
+
+### Analysis Of Variance - ANOVA 
+```{r,echo=TRUE, results='hide'}
+anova(lm(mpg~am, data = mtcars))
+```
+
+---.class #id 
+
+## Prediction
+```{r,echo=FALSE, results='hide'}
+library(ggplot2)
+```
+### Example
+- A car weight is 3.22 thousand pounds
+- The prediction is:
+```{r,echo=FALSE, results='asis'}
+paste(round((37.29 - (5.34*3.22)), digits=0), " Miles Per Gallon", sep="")
+```
+
+```{r,echo=FALSE, results='markup'}
+qplot(wt, mpg,  data = mtcars, geom = c("point","smooth"), method = "lm")
+```
+---

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Fuel Consumption Prediction</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Car Fuel Consumption Prediction">
+  <meta name="author" content="Jean Rene Ndeki, Data Scientist">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Car Fuel Consumption Prediction</h1>
+    <h2>Peer Assessment</h2>
+    <p>Jean Rene Ndeki, Data Scientist<br/>Coursera</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The Car Fuel Consumption Prediction is a regression model</li>
+<li>The data product forecasts Miles Per Gallon (MPG)</li>
+<li>The study and development follow the approach below</li>
+</ul>
+
+<h2>Outline</h2>
+
+<ul>
+<li>Question</li>
+<li>Data</li>
+<li>Features</li>
+<li>Algorithm</li>
+<li>Evaluation</li>
+<li>Prediction</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Question</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>How many Miles Per Gallon (MPG) can a car travel?</li>
+<li>A simple linear regression model answers the question </li>
+<li>The data product uses the weight variable to predict MPG </li>
+</ul>
+
+<h2>Data</h2>
+
+<ul>
+<li>The data source is the 1974 motor trend US magazine</li>
+<li>The data sample includes 32 automobiles </li>
+<li>The cars are 1973-74 models</li>
+</ul>
+
+<h2>Features</h2>
+
+<ul>
+<li>The features comprise 10 characteristics </li>
+<li>They are automobile design and performance</li>
+<li>They also include automatic and manual transmission</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Algorithm and Evaluation</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Algorithm - Simple Linear Regression</h3>
+
+<pre><code class="r">fit&lt;-lm(mpg ~ wt, data = mtcars)
+</code></pre>
+
+<h3>Equation</h3>
+
+<pre><code>## [1] &quot;Miles Per Gallon Prediction = 37.29 - 5.34 * weight&quot;
+</code></pre>
+
+<h3>Testing - t Student</h3>
+
+<pre><code class="r">t.test(mpg ~ am, data = mtcars)
+</code></pre>
+
+<h3>Analysis Of Variance - ANOVA</h3>
+
+<pre><code class="r">anova(lm(mpg~am, data = mtcars))
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Prediction</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Example</h3>
+
+<ul>
+<li>A car weight is 3.22 thousand pounds</li>
+<li>The prediction is:
+[1] &quot;20 Miles Per Gallon&quot;</li>
+</ul>
+
+<h2><img src="assets/fig/unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7"> </h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Question'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Algorithm and Evaluation'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Prediction'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
