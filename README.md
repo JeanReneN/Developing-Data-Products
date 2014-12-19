@@ -10,5 +10,9 @@ Click the link below to run the application:
 http://jeanrene.shinyapps.io/CARMPG
 
 II. Slidify Presentation
-The Slidify Presentation deals with the Shiny application mentioned above (see first_deck).
+
+The Slidify Presentation link below (see first_deck).
+
+
+http://htmlpreview.github.io/?https://github.com/JeanReneN/JeanReneN.github.io/blob/gh-pages/first_deck/index.html
 
